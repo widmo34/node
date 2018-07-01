@@ -1,4 +1,4 @@
-// here I include ans os module 
+// here I include an os module 
 var os = require('os');
 
 var type = os.type();

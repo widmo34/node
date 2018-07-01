@@ -1,22 +1,18 @@
-// module which convert time 
+// module which convert time. the function gets seconds from os.uptime module and gives hours, minutes and seconds which are left
 var os = require('os');
 var time = os.uptime();
 
     function convert(value){
+       var minutes =  value / 60;
+           minutes = minutes % 60;
+       var hours = Math.floor(value / 3600);
+       var seconds = value % 60;
 
-       var minutes =  (value / 60).toFixed(2);
+       console.log('Uptime is ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' min ' + seconds.toFixed(0) + ' sec')
        
-       if(minutes > 60 ){
-            var modulo = (minutes % 60).toFixed(0);
-            var hours = (minutes / 60).toFixed();
-            console.log('uptime is ' + hours + ' hours and  ' + modulo + ' minutes');
-           }else{
-               console.log('uptime is ' + minutes)
-           }
-
-      }
-
-
+    }
     
+  
 
-    convert(time);
+   exports.converter = convert; 
+   exports.t = time;
