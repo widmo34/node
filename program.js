@@ -1,24 +1,39 @@
 // here I include ans os module 
 var os = require('os');
 
-console.log(os.EOL);
 
 
 
+// I set charset as utf-8 
+process.stdin.setEncoding('utf-8');
 
 process.stdin.on('readable', function() {
-// metoda .read() ma za zadanie odczytać co użytkownik podał na wejściu
+// method has to read what an user typed in the console 
         var input = process.stdin.read();
         if (input !== null) {
             var instruction = input.toString().trim();
-            if (instruction === '/exit') {
-                process.stdout.write('Quitting app!\n');
-                console.log('your os language is ' +  process.env['lang'] + '/n/n');
-                console.log('your node version is ' + process.versions['node'] + '/n/n/n');
+            switch(instruction){
+                case '/exit':    
+                process.stdout.write('Quitting app! \n');
+                console.log('your os language is ' +  process.env['lang']);
+                console.log('your node version is ' + process.versions['node']);
                 process.exit();
-        } else {
-            process.stderr.write('Wrong instruction!\n');
-        }
+                
+                case '/sayhello':
+                process.stdout.write('hello \n');
+                process.exit();
+                break;
+
+
+                default:
+                process.stderr.write('wrong command \n');
+
+
+            }
+
+
+               
+        
     }
 });
 
