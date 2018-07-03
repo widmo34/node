@@ -26,8 +26,7 @@ process.stdin.on('readable', function() {
                
                 case '/time' :
                 var timer = require('../modules/time')
-                var tt = require('../modules/time').t;
-                timer.converter(tt); 
+                timer.converter(); 
                 break;  
 
 
