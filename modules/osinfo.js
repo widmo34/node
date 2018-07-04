@@ -18,9 +18,16 @@ function getOSinfo(){
     // cpu model 
     var cpu = os.cpus()[0].model;
     console.log('CPU model:', cpu);
+    
     // uptime 
     var uptime = os.uptime();
     console.log('Uptime: ~', (uptime / 60).toFixed(0), 'min');
+   
+    var timer = require('../modules/time')
+    var convertedTime =  timer.converter(uptime); 
+    console.log('uptime is ' + convertedTime);
+   
+    
     // homdedir and user name 
     var userInfo = os.userInfo();
     console.log('User name:', userInfo.username);
