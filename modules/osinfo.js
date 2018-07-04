@@ -26,6 +26,9 @@ function getOSinfo(){
     var timer = require('../modules/time')
     var convertedTime =  timer.converter(uptime); 
     console.log('uptime is ' + convertedTime);
+
+    var convertedTime =  timer.converter(3665); 
+    console.log('uptime is ' + convertedTime);
    
     
     // homdedir and user name 
