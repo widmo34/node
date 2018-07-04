@@ -27,8 +27,8 @@ function getOSinfo(){
     var convertedTime =  timer.converter(uptime); 
     console.log('uptime is ' + convertedTime);
 
-    var convertedTime =  timer.converter(3665); 
-    console.log('uptime is ' + convertedTime);
+    var convertedTime2 =  timer.converter(3665); 
+    console.log('uptime is ' + convertedTime2);
    
     
     // homdedir and user name 
